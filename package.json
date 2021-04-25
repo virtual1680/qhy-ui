@@ -1,0 +1,61 @@
+{
+  "name": "qhy-ui",
+  "version": "1.0.0",
+  "private": false,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "test:unit": "vue-cli-service test:unit"
+  },
+  "main": "./src/components/ui/index.js",
+  "dependencies": {
+    "@types/three": "^0.126.1",
+    "@types/vue-ls": "^3.2.2",
+    "ant-design-vue": "^1.7.4",
+    "core-js": "^3.6.5",
+    "element-ui": "^2.15.1",
+    "qhy-ui": "^1.0.0",
+    "three": "^0.126.1",
+    "vue": "^2.6.11",
+    "vue-class-component": "^7.2.3",
+    "vue-ls": "^3.2.2",
+    "vue-property-decorator": "^9.1.2",
+    "vue-router": "^3.2.0",
+    "vuex": "^3.4.0",
+    "vuex-class": "latest"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^3.6.7",
+    "@types/jest": "^24.9.1",
+    "@vue/cli-plugin-babel": "~4.5.0",
+    "@vue/cli-plugin-router": "~4.5.0",
+    "@vue/cli-plugin-typescript": "~4.5.0",
+    "@vue/cli-plugin-unit-jest": "~4.5.0",
+    "@vue/cli-plugin-vuex": "~4.5.0",
+    "@vue/cli-service": "~4.5.0",
+    "@vue/test-utils": "^1.0.3",
+    "node-sass": "^4.12.0",
+    "sass-loader": "^8.0.2",
+    "typescript": "~3.9.3",
+    "vue-template-compiler": "^2.6.11",
+    "vuex-module-decorators": "^1.0.1"
+  },
+  "files": [
+    "dist/*",
+    "src/*",
+    "public/*",
+    "*.json",
+    "*.js"
+  ],
+  "description": "## Project setup ``` yarn install ```",
+  "directories": {
+    "test": "tests"
+  },
+  "keywords": [
+    "vue",
+    "ui",
+    "移动端组件"
+  ],
+  "author": "qinhongyang",
+  "license": "ISC"
+}
