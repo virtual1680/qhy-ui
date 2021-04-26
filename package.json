@@ -16,6 +16,7 @@
     "element-ui": "^2.15.1",
     "qhy-ui": "^1.0.1",
     "three": "^0.126.1",
+    "vant": "^2.12.10",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
     "vue-ls": "^3.2.2",
@@ -56,6 +57,6 @@
     "ui",
     "移动端组件"
   ],
-  "author": "qinhongyang",
+  "author": "itperson <772622542@qq.com>",
   "license": "ISC"
 }

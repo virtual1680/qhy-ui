@@ -21,15 +21,15 @@
 
 <script lang="ts">
 import {Component, Prop, Watch, Emit, Vue, Ref} from 'vue-property-decorator';
-import HelloWorld from '@/components/HelloWorld.vue'; // @ is an alias to /src
-import Three1 from '@/components/ThreeOne.vue'; // @ is an alias to
-import Three2 from '@/components/ThreeTow.vue'; // @ is an alias to
-import Three3 from '@/components/ThreeThree.vue'; // @ is an alias to
-import { TestModule } from '@/store/modules/Test';
-import {UserModule} from "../store/modules/user";
+import HelloWorld from '../../../components/HelloWorld.vue'; // @ is an alias to /src
+import Three1 from '../../../components/ThreeOne.vue'; // @ is an alias to
+import Three2 from '../../../components/ThreeTow.vue'; // @ is an alias to
+import Three3 from '../../../components/ThreeThree.vue'; // @ is an alias to
+import { TestModule } from '../../../store/modules/Test';
+import {UserModule} from "../../../store/modules/user";
 import {Action, State} from 'vuex-class'
 // @ts-ignore
-import {QLoading} from '@/components/ui'
+import {QLoading} from '../../../components/ui/index'
 
 @Component({
   components: {

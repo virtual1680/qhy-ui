@@ -10,9 +10,9 @@ import store from './store';
 import Storage from 'vue-ls';
 /** 基础配置 */
 import config from '@/defaultSettings';
-/** UI组件 */
-import AntDesign from 'ant-design-vue';
-import 'ant-design-vue/dist/antd.css';
+// /** UI组件 */
+// import AntDesign from 'ant-design-vue';
+// import 'ant-design-vue/dist/antd.css';
 /** 自定义指令 */
 import Directive from '@/utils/directive';
 
@@ -23,13 +23,20 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(ElementUI);
 
+import { Tabbar, TabbarItem,NavBar } from 'vant';
+import 'vant/lib/index.css';
+
+Vue.use(NavBar);
+Vue.use(Tabbar);
+Vue.use(TabbarItem);
+
 // @ts-ignore
 import QUI from '@/components/ui'
 // import QUI from 'qhy-ui'
 
 Vue.config.productionTip = false;
 Vue.use(Storage, config.storageOptions);
-Vue.use(AntDesign);
+// Vue.use(AntDesign);
 Vue.use(Directive);
 Vue.use(QUI);
 

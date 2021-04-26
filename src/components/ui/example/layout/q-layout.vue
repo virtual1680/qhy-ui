@@ -47,7 +47,7 @@
 
 <style scoped lang="scss">
   .q-container{
-    background:#F5F5F5;
+    background: #fafafa;
     .q-header-box{
       height:46px;
       overflow: hidden;

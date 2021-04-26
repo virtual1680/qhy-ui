@@ -1,23 +1,26 @@
 <template>
-  <q-layout layout-type="header-footer">
-    <template>
+  <q-layout layout-type="header">
+    <template #header>
+      <van-nav-bar :title="$route.meta.title" left-text="返回" left-arrow  @click-left="$router.go(-1)"></van-nav-bar>
+    </template>
+    <div class="container">
       <div>
         <q-form ref="form" :rules="rules">
           <q-form-item star label="用户名" prop="name">
-            <q-input v-model="username" @input="onInput"></q-input>
+            <q-input v-model="username"></q-input>
           </q-form-item>
           <q-form-item star label="密码" prop="password">
-            <q-input v-model="password" @input="onInput"></q-input>
+            <q-input v-model="password"></q-input>
           </q-form-item>
           <q-form-item>
             <q-button type="success" plain  round @click="submit('form')">提交</q-button>
           </q-form-item>
         </q-form>
-        <!--position="top"-->
-
-
+      </div>
+      <!---->
+      <div>
         <q-form-item class="mt1" label="用户信息" position="top">
-          <q-input v-model="value" @input="onInput">
+          <q-input v-model="value">
             <template #left-icon>
               <div>图</div>
             </template>
@@ -26,25 +29,24 @@
             </template>
           </q-input>
         </q-form-item>
-        <q-input class="mt1" width="70%" v-model="value" @input="onInput">
-          <template #left-icon>
-            <div>图</div>
-          </template>
-        </q-input>
-        <q-input class="mt1" width="70%" v-model="value" border="bottom" @input="onInput">
-          <template #right-icon>
-            <div>图</div>
-          </template>
-        </q-input>
-        <h1 v-for="item in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16]" :key="item">Here might be a page title{{item}}</h1>
+        <q-form-item class="mt1" star label="用户信息" position="top">
+          <q-input v-model="value">
+            <template #left-icon>
+              <div>图</div>
+            </template>
+            <template #right-icon>
+              <div>图</div>
+            </template>
+          </q-input>
+        </q-form-item>
       </div>
-    </template>
+    </div>
   </q-layout>
 </template>
 
 <script>
   export default {
-    name: "Layout",
+    name: "index",
     data () {
       return {
         value:'',
@@ -61,22 +63,23 @@
         }
       }
     },
-    created () {
-    },
     methods: {
       submit(formName){
         this.$refs[formName].validate((valid)=>{
-          console.log(valid)
+          console.log("-=-=-",valid);
+          if (valid) {
+            this.$QToast.success('验证成功')
+          } else {
+            this.$QToast.error('验证失败')
+          }
         });
-        console.log(12212)
       },
-      onInput(){
-        console.log(this.value)
-      }
     }
   }
 </script>
 
-<style scoped>
-
+<style scoped lang="scss">
+  .container{
+    padding:1rem;
+  }
 </style>

@@ -48,12 +48,12 @@ class Toast extends ToastClass{
   }
   close(callback){
     let timer = setTimeout(()=>{
-      if (this.show) {
-        this.show = false;
+      if (this.izShow) {
+        this.izShow = false;
         callback && callback()
       }
       clearTimeout(timer);
-    },2500)
+    },2000)
   }
 }
 Toast.install = function () {
