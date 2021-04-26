@@ -46,49 +46,62 @@
       this.$nextTick().then(()=>{
         //获取q-form传过来的验证规则
         this.rule = slot.componentInstance.$parent.$attrs['rule'] || [];
+        this.findChild(slot,null);
+      })
+    },
+    methods: {
+      findChild(slot,callback) {
         if (slot) {
           let vnodeChild = slot.componentInstance['_vnode'].children;
           if (vnodeChild.length>3){
             vnodeChild.forEach(item =>{
               if (item.tag === 'input') {
-                this.checking(item);
+                  this.checking(item,callback);
               }
             })
           }
         }
-      })
-    },
-    methods: {
-      checking(dom){
+      },
+      checking(dom,callback){
         //根据验证规则添加监听事件
         if (this.rule.length>0){
+          let arr = [];
           this.rule.forEach((item,index) => {
-            // item
             if (item.trigger) {
-              // console.log(item.trigger);
-              dom.elm.addEventListener(item.trigger,()=>{
-                let value = dom.context.value;
-                // console.log(dom);
-                if (item.required) {
-                  //TODO 需要判断border__bottom的情况
-                  if (value) {
-                      if (dom.elm.className.includes('q-input-inner__border__error')) {
-                        dom.elm.className = dom.elm.className.replaceAll('q-input-inner__border__error','')
-                      }
-                     //q-input-inner__border__bottom
-                    this.errorMessage = ''
-                  }else{
-                    if (dom.elm.className.includes('q-input-inner__border')) {
-                      dom.elm.className.replaceAll('q-input-inner__border','')
-                    }
-                    dom.elm.className =dom.elm.className+ ' q-input-inner__border__error';
-                    this.errorMessage = item.message
-                  }
-                }
-                // console.log(dom.context.value,"8989898")
-              })
+              if (callback) {
+                let result = this.required(dom,item);
+                arr.push(result)
+              }else{
+                dom.elm.addEventListener(item.trigger,()=>{
+                  this.required(dom,item,null)
+                  // console.log(dom.context.value,"8989898")
+                })
+              }
             }
-          })
+          });
+          arr.length > 0 && callback(!arr.includes(false))
+        }
+      },
+      required(dom,item){
+        let value = dom.context.value;
+        // console.log(dom);
+        if (item.required) {
+          //TODO 需要判断border__bottom的情况
+          if (value) {
+            if (dom.elm.className.includes('q-input-inner__border__error')) {
+              dom.elm.className = dom.elm.className.replaceAll('q-input-inner__border__error','')
+            }
+            //q-input-inner__border__bottom
+            this.errorMessage = '';
+            return true;
+          }else{
+            if (dom.elm.className.includes('q-input-inner__border')) {
+              dom.elm.className.replaceAll('q-input-inner__border','')
+            }
+            dom.elm.className =dom.elm.className+ ' q-input-inner__border__error';
+            this.errorMessage = item.message;
+            return false;
+          }
         }
       }
     },

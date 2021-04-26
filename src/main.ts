@@ -24,7 +24,8 @@ import 'element-ui/lib/theme-chalk/index.css';
 Vue.use(ElementUI);
 
 // @ts-ignore
-import QUI from 'qhy-ui'
+import QUI from '@/components/ui'
+// import QUI from 'qhy-ui'
 
 Vue.config.productionTip = false;
 Vue.use(Storage, config.storageOptions);

@@ -2,23 +2,15 @@
   <q-layout layout-type="header-footer">
     <template>
       <div>
-        <q-form :rules="rules">
+        <q-form ref="form" :rules="rules">
           <q-form-item star label="用户名" prop="name">
-            <q-input v-model="username" @input="onInput">
-              <template #right-icon>
-                <div>图</div>
-              </template>
-            </q-input>
+            <q-input v-model="username" @input="onInput"></q-input>
           </q-form-item>
           <q-form-item star label="密码" prop="password">
-            <q-input v-model="password" @input="onInput">
-              <template #right-icon>
-                <div>图</div>
-              </template>
-            </q-input>
+            <q-input v-model="password" @input="onInput"></q-input>
           </q-form-item>
           <q-form-item>
-            <q-button type="success" plain round @click.native="submit">提交</q-button>
+            <q-button type="success" plain  round @click="submit('form')">提交</q-button>
           </q-form-item>
         </q-form>
         <!--position="top"-->
@@ -72,7 +64,10 @@
     created () {
     },
     methods: {
-      submit(){
+      submit(formName){
+        this.$refs[formName].validate((valid)=>{
+          console.log(valid)
+        });
         console.log(12212)
       },
       onInput(){

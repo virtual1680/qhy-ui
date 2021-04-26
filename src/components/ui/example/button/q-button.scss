@@ -1,67 +1,5 @@
-<template>
-  <button type="button" class="q-button"
-       :style="`${bg?'background:'+bg:''}`"
-       :class="`${type?'q-button__'+type:''} ${block?'block':''} ${plain?'plain':''} ${round?'round':''}`" >
-    <span class="q-button__text">
-      <slot></slot>
-    </span>
-  </button>
-</template>
-
-<script>
-  export default {
-    name: "q-button",
-    props:{
-      //TODO 后期有需要再开发
-      size:{
-        type:String,
-        default:'',
-      },
-      type:{
-        type:String,
-        default:'',//primary / success / warning / error / text
-      },
-      /** 是否加载 */
-      loading:{
-        type:Boolean,
-        default:false
-      },
-      /** 是否圆角 */
-      round:{
-        type:Boolean,
-        default:false
-      },
-      /** 背景颜色 */
-      bg:{
-        type:String,
-        default:''
-      },
-      /** 是否朴素按钮 */
-      plain:{
-        type:Boolean,
-        default:false
-      },
-      /** 是否禁用 */
-      disabled:{
-        type:Boolean,
-        default:false
-      },
-      /** 是否块级元素 */
-      block:{
-        type:Boolean,
-        default:false
-      },
-    },
-    methods:{
-      click(e){
-        this.$emit('click',e)
-      }
-    }
-  }
-</script>
-
-<style scoped lang="scss">
 .q-button{
+  position: relative;
   min-width: 9rem;
   height: 3.7rem;
   background: #fff;
@@ -78,6 +16,7 @@
   cursor: pointer;
   box-sizing: border-box;
   outline: none;
+  overflow:hidden;
   &.block{
     width: 100%;
     display: block;
@@ -132,6 +71,14 @@
     padding: 0.5rem 0;
     border: none;
   }
+  .q-button__disabled{
+    position: absolute;
+    left: 0;
+    top: 0;
+    width:100%;
+    height:100%;
+    background-color:rgba(255,255,255,0.3);
+  }
 
   .q-button__text{
     display: inline-block;
@@ -139,4 +86,3 @@
   }
 
 }
-</style>

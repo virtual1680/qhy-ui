@@ -8479,6 +8479,26 @@ qhy-ui@^1.0.0:
     vuex "^3.4.0"
     vuex-class latest
 
+qhy-ui@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/qhy-ui/-/qhy-ui-1.0.1.tgz#b8ec52d00a53c191190035c987f84fb050805de9"
+  integrity sha512-ptI9/bA+5W37ZlIkkDu2XvmyTc5CGb7Oll0wpEqpOxck7bFDRkK8oSOAOruZIGqxKmTSGN/WDCCG7YZIpRiURA==
+  dependencies:
+    "@types/three" "^0.126.1"
+    "@types/vue-ls" "^3.2.2"
+    ant-design-vue "^1.7.4"
+    core-js "^3.6.5"
+    element-ui "^2.15.1"
+    qhy-ui "^1.0.0"
+    three "^0.126.1"
+    vue "^2.6.11"
+    vue-class-component "^7.2.3"
+    vue-ls "^3.2.2"
+    vue-property-decorator "^9.1.2"
+    vue-router "^3.2.0"
+    vuex "^3.4.0"
+    vuex-class latest
+
 qs@6.7.0:
   version "6.7.0"
   resolved "https://registry.npm.taobao.org/qs/download/qs-6.7.0.tgz?cache=0&sync_timestamp=1610598235973&other_urls=https%3A%2F%2Fregistry.npm.taobao.org%2Fqs%2Fdownload%2Fqs-6.7.0.tgz#41dc1a015e3d581f1621776be31afb2876a9b1bc"

@@ -1,6 +1,6 @@
 {
   "name": "qhy-ui",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -14,7 +14,7 @@
     "ant-design-vue": "^1.7.4",
     "core-js": "^3.6.5",
     "element-ui": "^2.15.1",
-    "qhy-ui": "^1.0.0",
+    "qhy-ui": "^1.0.1",
     "three": "^0.126.1",
     "vue": "^2.6.11",
     "vue-class-component": "^7.2.3",
@@ -42,7 +42,7 @@
   },
   "files": [
     "dist/*",
-    "src/*",
+    "src/components/ui/*",
     "public/*",
     "*.json",
     "*.js"
