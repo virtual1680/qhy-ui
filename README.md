@@ -2,7 +2,7 @@
 
 ## 组件列表
 ```
-dialog toast form button input star loading   等等开发中
+dialog toast form button input star loading cell  等等开发中
 ```
 
 ### Compiles and hot-reloads for development

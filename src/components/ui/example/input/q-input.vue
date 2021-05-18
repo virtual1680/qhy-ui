@@ -152,7 +152,7 @@
     font-size: 1.3rem;
     &.q-input-inner__border{
       border-radius:0.5rem;
-      border: 0.07rem solid #cfcfcf;
+      border: 0.07rem solid #d7d7d7;
       &.q-input-inner__border__error{
         border: 0.07rem solid #f56c6c;
       }
@@ -162,7 +162,7 @@
     }
 
     &.q-input-inner__border__bottom{
-      border-bottom: 0.07rem solid #cfcfcf;
+      border-bottom: 0.07rem solid #d7d7d7;
       &.q-input-inner__border__bottom__error{
         border-bottom: 0.07rem solid #f56c6c;
       }

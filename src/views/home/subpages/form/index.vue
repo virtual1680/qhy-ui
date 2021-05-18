@@ -66,7 +66,6 @@
     methods: {
       submit(formName){
         this.$refs[formName].validate((valid)=>{
-          console.log("-=-=-",valid);
           if (valid) {
             this.$QToast.success('验证成功')
           } else {

@@ -1,10 +1,10 @@
 <template>
-  <div id="app">
+  <div class="app">
       <router-view/>
       <van-tabbar route v-if="show">
-        <van-tabbar-item to="/home" icon="home-o">QUI</van-tabbar-item>
+        <van-tabbar-item to="/" icon="home-o">QUI</van-tabbar-item>
         <van-tabbar-item to="/three" icon="search">Three.js</van-tabbar-item>
-        <van-tabbar-item to="/animate" icon="friends-o">animate</van-tabbar-item>
+        <van-tabbar-item to="/mine" icon="friends-o">mine</van-tabbar-item>
       </van-tabbar>
   </div>
 </template>
@@ -13,14 +13,14 @@
     name:'app',
     computed:{
       show(){
-        return this.$route.path === '/home' || this.$route.path === '/three' || this.$route.path === '/animate'
+        return this.$route.path === '/' || this.$route.path === '/three' || this.$route.path === '/mine'
       }
     }
   }
 </script>
 
 <style lang="scss">
-#app {
+.app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

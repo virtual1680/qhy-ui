@@ -7,9 +7,8 @@
         @mouseenter="disabled ? '' : curScore=i"
         @mouseleave="disabled ? '' : curScore=''"
         @click="disabled ? '' : setScore(i)"
-        :class="getClass(i)"
-      >
-        <i v-if="disabled&&i==Math.floor(score)+1" class="icon-star" :style="'width:'+width"></i>
+        :class="getClass(i)">
+        <i v-if="disabled && i===Math.floor(score)+1" class="icon-star" :style="'width:'+width"></i>
       </i>
     </div>
   </div>

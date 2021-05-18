@@ -23,14 +23,13 @@ import 'element-ui/lib/theme-chalk/index.css';
 
 Vue.use(ElementUI);
 
-import { Tabbar, TabbarItem,NavBar } from 'vant';
+import Vant from 'vant';
 import 'vant/lib/index.css';
 
-Vue.use(NavBar);
-Vue.use(Tabbar);
-Vue.use(TabbarItem);
+Vue.use(Vant);
 
 // @ts-ignore
+//  import QUI from '../lib/qui.umd.js'
 import QUI from '@/components/ui'
 // import QUI from 'qhy-ui'
 
